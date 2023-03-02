@@ -16,24 +16,23 @@
         <!-- Set the background colour of the document -->
         <style>
             body {
-                background-color: transparent;
-                color: rgba(0, 0, 0, 0);
-                margin: 0px;
-                padding: 0px;
-                border: 0px;
+              background-color: rgba(0, 0, 0, 0);
+              color: rgba(0, 0, 0, 0);
+              margin: 0px;
+              padding: 0px;
+              border: 0px;
             }
-
             canvas {
                 image-rendering: optimizeSpeed;
                 -webkit-interpolation-mode: nearest-neighbor;
                 -ms-touch-action: none;
+                background-color: rgba(0, 0, 0, 0);
                 margin: 0px;
                 padding: 0px;
                 border: 0px;
                 position: relative;
                 z-index: 0;
             }
-
 
             :-webkit-full-screen #canvas {
                  width: 100%;
@@ -85,13 +84,12 @@
 
 
         
-        <div class="gm4html5_div_class" id="gm4html5_div_id" style="position: absolute; z-index: 1;">
+        <div class="gm4html5_div_class" id="gm4html5_div_id">
             <!-- Create the canvas element the game draws to -->
-            <canvas id="canvas" width="600" height="600">
-                <p>Your browser doesn't support HTML5 canvas.</p>
+            <canvas id="canvas" width="600" height="600" >
+                     <p>Your browser doesn't support HTML5 canvas.</p>
             </canvas>
         </div>
-
 
         <!-- Run the game code -->
         <script type="text/javascript" src="html5game/portfolio_v1.js?JDJYB=1704147700"></script>
