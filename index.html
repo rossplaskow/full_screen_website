@@ -15,37 +15,56 @@
 
     <!-- Set the background colour of the document -->
     <style>
+        
+        
         body {
-          background-color: rgba(0, 0, 0, 0);
-          color: rgba(0, 0, 0, 0);
-          margin: 0px;
-          padding: 0px;
-          border: 0px;
-        }
-        canvas {
-            image-rendering: optimizeSpeed;
-            -webkit-interpolation-mode: nearest-neighbor;
-            -ms-touch-action: none;
-            background-color: transparent; /* Set the background to transparent */
-            margin: 0px;
-            padding: 0px;
-            border: 0px;
-            position: absolute;
-            z-index: 1;
-        }
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+canvas {
+    image-rendering: optimizeSpeed;
+    -webkit-interpolation-mode: nearest-neighbor;
+    -ms-touch-action: none;
+    background-color: transparent; /* Set the background to transparent */
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    position: absolute;
+    z-index: 2; /* Increase the z-index to bring it to the front */
+    top: 0; /* Position it at the top of the page */
+    left: 0; /* Position it at the left of the page */
+}
+
+iframe {
+    position: absolute;
+    z-index: 1; /* Set the z-index to a value lower than the canvas */
+    top: 0; /* Position it at the top of the page */
+    left: 0; /* Position it at the left of the page */
+}
+
+div.gm4html5_div_class {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    position: absolute;
+    z-index: 2; /* Increase the z-index to bring it to the front */
+    top: 0; /* Position it at the top of the page */
+    left: 0; /* Position it at the left of the page */
+}
+
+        
+        
+        
 
         :-webkit-full-screen #canvas {
              width: 100%;
              height: 100%;
         }
-        div.gm4html5_div_class
-        {
-          margin: 0px;
-          padding: 0px;
-          border: 0px;
-          position: absolute; /* Set the position to absolute */
-          z-index: 1; /* Set the z-index to a value higher than the video */
-        }
+        
         /* START - Login Dialog Box */
         div.gm4html5_login
         {
