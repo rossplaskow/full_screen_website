@@ -30,8 +30,8 @@
             margin: 0px;
             padding: 0px;
             border: 0px;
-            position: relative;
-            z-index: 0;
+            position: absolute;
+            z-index: 1;
         }
 
         :-webkit-full-screen #canvas {
@@ -44,7 +44,7 @@
           padding: 0px;
           border: 0px;
           position: absolute; /* Set the position to absolute */
-          z-index: 2; /* Set the z-index to a value higher than the video */
+          z-index: 1; /* Set the z-index to a value higher than the video */
         }
         /* START - Login Dialog Box */
         div.gm4html5_login
@@ -78,7 +78,7 @@
 </head>
 
  <body>
-        <div style="display: flex; justify-content: center; align-items: center; height: 100vh; position: relative; z-index: 1;">
+        <div style="display: flex; justify-content: center; align-items: center; height: 100vh; position: relative; z-index: 0;">
          <div>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/_zFCeXO6x2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
          </div>
