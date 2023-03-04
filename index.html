@@ -17,18 +17,22 @@
         <style>
             
 
-              #logo {
-              position: absolute;
-              top: 20px;
-              left: calc(50% - 37.5px);
-              width: 75px;
-              height: 75px;
-              z-index: 1;
+             #logo {
+                position: absolute;
+                top: 20px;
+                left: calc(50% - 37.5px);
+                width: 75px;
+                height: 75px;
+                z-index: 1;
             }
-            
-            div#video-container {
-            margin-top: -2px;
-             }
+
+            .video-container {
+                border-radius: 20px;
+                overflow: hidden;
+                margin-top: -13px;
+            }
+
+
             
             #twitter-logo {
               position: fixed;
@@ -56,7 +60,10 @@
               margin-right: 40px;
             }
 
-
+            .video-container {
+              border-radius: 20px;
+              overflow: hidden;
+              margin-top: -10px
 
             
             
@@ -156,7 +163,7 @@
 
         
         <div style="display: flex; justify-content: center; align-items: center; height: 100vh; position: relative; z-index: 1;">
-          <div id = "video-container">
+          <div class="video-container">
             <img id="logo" src="logo_transparent.png" alt="Logo">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/_zFCeXO6x2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
