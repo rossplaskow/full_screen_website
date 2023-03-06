@@ -8,7 +8,7 @@
         <meta name ="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta charset="utf-8"/>
-        <script src="https://cdn.rive.app/latest/rive.js"></script>
+
 
         <!-- Set the title bar of the page -->
         <title>Ross Plaskow: London Animator</title>
@@ -56,18 +56,6 @@
 
 
 
-            #rive-container {
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 10;
-                width: 30px;
-                height: 30px;
-
-
-
-
             .video-container {
                 border-radius: 20px;
                 overflow: hidden;
@@ -99,6 +87,25 @@
 
 
 
+             
+            #rive-container {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 30px; /* Change this value to adjust the width of the Rive file */
+              height: 30px; /* Change this value to adjust the height of the Rive file */
+              z-index: 9;
+              pointer-events: none; /* This prevents the link from blocking the Rive file */
+            }
+
+            #rive-container iframe {
+              pointer-events: auto; /* This allows the Rive file to be clickable */
+            }
+
+
+                  
+                  
 
 
                   
@@ -181,36 +188,27 @@
         
 
 
-        <div id="rive-container"></div>
+       <div id="rive-container">
+          <iframe src="https://rive.app/s/Q2Mr6xoZVESegqvbfA-LrA/embed" 
+                  width="100%" 
+                  height="100%" 
+                  frameborder="0" 
+                  allowfullscreen>
+          </iframe>
+          <a href="https://twitter.com/rossplaskow" 
+             target="_blank" 
+             style="position: absolute; 
+                    top: 50%; 
+                    left: 50%; 
+                    transform: translate(-50%, -50%); 
+                    width: 100%; 
+                    height: 100%; 
+                    z-index: 10;">
+          </a>
+        </div>
 
-        <script>
-          // Load the Rive file
-          const riveFile = "twitter_rive_1.riv";
-          const rive = new Rive({ src: riveFile });
 
-          // Get the Rive animation
-          const artboard = rive.getArtboard("Artboard 1");
-          const animation = new Rive.LinearAnimationState(artboard, "animation");
-
-          // Set up the Rive player
-          const player = new Rive.Player(animation);
-          player.draw = (context, { x, y, w, h }) => {
-            context.clearRect(0, 0, w, h);
-            artboard.draw(context, w, h);
-          };
-
-          // Play the animation
-          player.play();
-
-          // Add the Rive player to the webpage
-          const container = document.getElementById("rive-container");
-          container.appendChild(player.view);
-
-          // Add a click event listener to the Rive animation
-          container.addEventListener("click", () => {
-            window.location.href = "https://twitter.com/rossplaskow";
-          });
-        </script>
+       
      
 
 
