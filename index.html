@@ -210,10 +210,28 @@
         </div>
         
         <div style="position: absolute; top: 50px; right: 20px; transform: translate(-50%, -50%);">
-           <a href="https://twitter.com/rossplaskow" target="_blank" style="z-index: 20; display: block; position: relative;">
-              <iframe src="https://rive.app/s/Q2Mr6xoZVESegqvbfA-LrA/embed" width="30" height="30" frameborder="0" allowfullscreen style="z-index: 10; position: relative;"></iframe>
-           </a>
+           <iframe src="https://rive.app/s/Q2Mr6xoZVESegqvbfA-LrA/embed" width="30" height="30" frameborder="0" allowfullscreen></iframe>
+           <script>
+              document.querySelector('iframe').addEventListener('load', function() {
+                 var a = this.contentDocument.createElement('a');
+                 a.href = 'https://twitter.com/rossplaskow';
+                 a.target = '_blank';
+                 a.style.position = 'absolute';
+                 a.style.top = 0;
+                 a.style.left = 0;
+                 a.style.width = '30px';
+                 a.style.height = '30px';
+                 this.contentDocument.body.appendChild(a);
+                 this.contentDocument.body.style.position = 'relative';
+                 this.contentDocument.body.style.width = '30px';
+                 this.contentDocument.body.style.height = '30px';
+                 this.contentDocument.querySelector('a').onclick = function() {
+                    window.open('https://twitter.com/rossplaskow', '_blank');
+                 };
+              });
+           </script>
         </div>
+
 
 
 
