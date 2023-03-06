@@ -51,16 +51,21 @@
             }
             
             
-            #rive-animation {
+           #rive-animation {
               position: absolute;
               top: 35px;
               right: 35px; 
               z-index: 10;
             }
 
+            a {
+              z-index: 11; /* set a higher z-index than the #rive-animation div */
+            }
+
             #rive-animation iframe {
               pointer-events: auto;
             }
+
 
 
 
@@ -184,6 +189,7 @@
             <iframe width="40" height="40" style="border: none;" src="https://rive.app/s/I673lWF2akenZySBjN9lwg/embed" allowfullscreen></iframe>
           </div>
         </a>
+
 
 
 
