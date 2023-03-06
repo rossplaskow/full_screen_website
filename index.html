@@ -8,6 +8,7 @@
         <meta name ="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta charset="utf-8"/>
+        <script src="https://cdn.rive.app/latest/rive.js"></script>
 
         <!-- Set the title bar of the page -->
         <title>Ross Plaskow: London Animator</title>
@@ -26,22 +27,53 @@
                 z-index: 1;
             }
 
+            #logo-text {
+                position: absolute;
+                top: 150px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                font-family: Arial, sans-serif;
+                font-size: 25px;
+                color: black;
+                text-align: center;
+            }
+
+            .contact-info {
+              position: absolute;
+              bottom: 50px;
+              left: 50%;
+              transform: translateX(-50%);
+              font-family: Arial, sans-serif;
+              font-size: 25px;
+              color: black;
+              text-align: center;
+              z-index: 1;
+            }
+            
+
+
+
+
+
+            #rive-container {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 10;
+                width: 30px;
+                height: 30px;
+
+
+
+
             .video-container {
                 border-radius: 20px;
                 overflow: hidden;
-                margin-top: -13px;
+                margin-top: -14px;
             }
-
-
-            
-            #twitter-logo {
-              position: fixed;
-              top: 40px;
-              right: 40px;
-              width: 40px;
-              height: 40px;
-              z-index: 2;
-            }
+         
 
             #navigation {
                 position: absolute;
@@ -65,7 +97,8 @@
               overflow: hidden;
               margin-top: -10px
 
-            
+
+
 
 
                   
@@ -131,10 +164,7 @@
                height: 100%;
             }
         </style>
-        
-        <a href="https://twitter.com/rossplaskow" target="_blank">
-          <img id="twitter-logo" src="twitter-logo.png" alt="Twitter Logo">
-        </a>
+   
 
     </head>
 
@@ -147,15 +177,63 @@
             <a href="https://rossssss.com/tutorials">Tutorials</a>
         </div>
         
+        
+        
+
+
+        <div id="rive-container"></div>
+
+        <script>
+          // Load the Rive file
+          const riveFile = "twitter_rive_1.riv";
+          const rive = new Rive({ src: riveFile });
+
+          // Get the Rive animation
+          const artboard = rive.getArtboard("Artboard 1");
+          const animation = new Rive.LinearAnimationState(artboard, "animation");
+
+          // Set up the Rive player
+          const player = new Rive.Player(animation);
+          player.draw = (context, { x, y, w, h }) => {
+            context.clearRect(0, 0, w, h);
+            artboard.draw(context, w, h);
+          };
+
+          // Play the animation
+          player.play();
+
+          // Add the Rive player to the webpage
+          const container = document.getElementById("rive-container");
+          container.appendChild(player.view);
+
+          // Add a click event listener to the Rive animation
+          container.addEventListener("click", () => {
+            window.location.href = "https://twitter.com/rossplaskow";
+          });
+        </script>
+     
+
 
 
         
         <div style="display: flex; justify-content: center; align-items: center; height: 100vh; position: relative; z-index: 1;">
           <div class="video-container">
             <img id="logo" src="logo_transparent.png" alt="Logo">
+           
+              <div id="logo-text">Hi I'm Ross ✌️ I animate stuff</div>
+              
             <iframe width="560" height="315" src="https://www.youtube.com/embed/_zFCeXO6x2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
         </div>
+        
+
+
+        
+       
+        <div class="contact-info">
+          <p>Feel free to get in touch 👉 whereisross@gmail.com</p>
+        </div>
+
 
 
 
